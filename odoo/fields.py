@@ -5051,7 +5051,7 @@ def apply_required(model, field_name):
 # imported here to avoid dependency cycle issues
 # pylint: disable=wrong-import-position
 from .exceptions import AccessError, MissingError, UserError
-from estate_property.models import (
+from estate.models import (
     check_pg_name, expand_ids, is_definition_class,
     BaseModel, IdType, NewId, PREFETCH_MAX,
 )
