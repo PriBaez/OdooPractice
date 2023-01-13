@@ -1,0 +1,7 @@
+.view_estate_property_tree>.property_tree_class>field[name="name"]{
+    width: 30%
+}
+
+.view_estate_property_tree>.property_tree_class>field[name="description"]{
+    width: 50%
+}
