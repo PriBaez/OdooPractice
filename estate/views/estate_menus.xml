@@ -2,6 +2,10 @@
 
 <odoo>
     <menuitem id="estate_menu_root" name="Real Estate" sequence="10"/>
-    <menuitem id="estate_first_level_menu" name="Advertisement" parent="estate_menu_root"/>
+    <menuitem id="estate_first_level_menu" name="Advertisement" sequence="1" parent="estate_menu_root"/>
+
     <menuitem id="estate_menu_action" parent="estate_first_level_menu" action="estate_model_action"/>
+
+    <menuitem id="estate_type_settings" name="Settings" sequence="2" parent="estate_menu_root"/>
+    <menuitem id="estate_type_menu_action" parent="estate_type_settings" action="estate_type_action"/>
 </odoo>
