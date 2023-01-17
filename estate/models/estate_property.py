@@ -6,6 +6,7 @@ class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Estate property"
 
+    # Model's fields
     name = fields.Char(string='Title', required=True, translate=True)
     description = fields.Text(string='Description')
     postcode = fields.Char(string='Postcode')
@@ -30,3 +31,8 @@ class EstateProperty(models.Model):
                                         ('offer accepted', 'Offer Accepted'), ('sold', 'Sold'),
                                         ('canceled', 'Canceled')], default='new'
                              )
+
+    user_id = fields.Many2one('res.users', string="Salesman", index=True, default=lambda self: self.env.user)
+    buyer_id = fields.Many2one('res.partner', string="Buyer", copy=False)
+    tag_ids = fields.Many2many('estate.property.tag')
+    offer_ids = fields.One2many('estate.property.offer', "property_id")
