@@ -58,3 +58,6 @@ class EstatePropertyOffer(models.Model):
             else:
                 raise UserWarning("That offer is already refused")
 
+    _sql_constraints = [('offer_price_positive', 'CHECK(price > 0)',
+                         'The Offer price must be strictly positive')
+                        ]
