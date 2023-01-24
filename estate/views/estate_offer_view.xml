@@ -19,12 +19,6 @@
         </field>
     </record>
 
-    <record id="action_test" model="ir.actions.act_window">
-        <field name="name">Test action</field>
-        <field name="res_model">estate.property</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
     <record id="view_estate_property_offer_tree" model="ir.ui.view">
         <field name="name">estate.property.offer.tree</field>
         <field name="model">estate.property.offer</field>
@@ -35,6 +29,7 @@
                 <field name="partner_id"/>
                 <field name="validity"/>
                 <field name="date_deadline"/>
+                <field name="property_type_id"/>
                 <button name="action_accept" type="object"  icon="fa-check" string="Accept"
                         attrs="{'invisible': ['|', ('status', '=', 'accepted'), ('status', '=', 'refused')]}"/>
                 <button name="action_refuse" type="object"  icon="fa-times" string="Refuse"
@@ -42,6 +37,14 @@
                 <field name="status" invisible="1"/>
             </tree>
         </field>
+    </record>
+
+    <record id="estate.estate_property_offer_action" model="ir.actions.act_window">
+        <field name="name">Property Offers</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="domain">[('property_type_id', '=', active_id)]</field>
+        <field name="view_mode">tree,form</field>
     </record>
 
 </odoo>
