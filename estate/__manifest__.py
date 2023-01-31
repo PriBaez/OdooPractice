@@ -2,7 +2,7 @@
 
 {
     'name': "estate",
-    'depends': ['base', 'account', 'contacts'],
+    'depends': ['base'],
     'License': "LGPL-3",
     'author': "Prisila Baez Mendez",
     'category': 'My Addons',
