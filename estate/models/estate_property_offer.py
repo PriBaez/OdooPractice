@@ -64,3 +64,13 @@ class EstatePropertyOffer(models.Model):
     _sql_constraints = [('offer_price_positive', 'CHECK(price > 0)',
                          'The Offer price must be strictly positive')
                         ]
+
+    @api.model
+    def create(self, vals_list):
+        estate_property_record = self.env['estate.property'].browse(vals_list["property_id"])
+        estate_property_record.state = 'offer received'
+
+        if vals_list['price'] < estate_property_record.best_price:
+            raise UserError("The offer must be higher than " + str(estate_property_record.best_price))
+
+        return super().create(vals_list)

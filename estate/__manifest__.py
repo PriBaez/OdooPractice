@@ -2,7 +2,7 @@
 
 {
     'name': "estate",
-    'depends': ['base'],
+    'depends': ['base', 'account', 'contacts'],
     'License': "LGPL-3",
     'author': "Prisila Baez Mendez",
     'category': 'My Addons',
@@ -15,6 +15,7 @@
         './views/estate_type_views.xml',
         './views/estate_tag_views.xml',
         './views/estate_offer_view.xml',
+        './views/res_users_views.xml',
         './security/ir.model.access.csv'
     ],
     'css': ['./static/src/Property.css']
